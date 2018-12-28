@@ -1,6 +1,6 @@
 # Loaders
 
-Automatic downloaders for various webpages. You might also be interested in [Wallloader](https://rsch.neocities.org/wallloader/), a downloader for various Android wallpaper applications.
+Automatic downloaders for various webpages and applications.
 
 ## [Heritage Downloader](https://github.com/TheLastZombie/loaders/blob/master/Heritage%20Downloader.js)
 
@@ -12,4 +12,4 @@ Needs user IDs as command line arguments. Downloads galleries and images from th
 
 ## [Wallpaper Downloader](https://rsch.neocities.org/wallloader)
 
-WIP downloader for various Android wallpaper applications that runs in your browser.
+WIP downloader for various Android wallpaper applications that runs in your browser, currently supporting Backdrops, Behang and Wallpaperboard.
