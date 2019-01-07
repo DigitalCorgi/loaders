@@ -18,6 +18,6 @@ Needs user IDs as command line arguments. Downloads galleries and images from th
 
 Automatically downloads soundtrack albums from [KHInsider](https://downloads.khinsider.com/), because that feature is currently behind a paywall.
 
-## [Wallpaper Downloader](https://rsch.neocities.org/wallloader)
+## [Wallpaper Downloader](https://thelastzombie.github.io/loaders/Wallpaper%20Downloader.html)
 
 WIP downloader for various Android wallpaper applications that runs in your browser, currently supporting Backdrops, Behang and Wallpaperboard.
