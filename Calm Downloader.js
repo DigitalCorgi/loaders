@@ -19,7 +19,7 @@ if (fs.existsSync("Calm Downloader")) {
 	process.chdir("Calm Downloader");
 };
 
-// Get heritage database
+// Get scene database
 console.log("Retrieving scene database...");
 console.log("");
 request("https://www.calm.com/meditate", function (error, response, body) {
