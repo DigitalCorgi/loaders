@@ -2,6 +2,10 @@
 
 Automatic downloaders for various webpages and applications.
 
+## [Calm Downloader](https://github.com/TheLastZombie/loaders/blob/master/Calm%20Downloader.js)
+
+Downloads all scenes including photo, video and audio assets from [Calm](https://www.calm.com/meditate).
+
 ## [Heritage Downloader](https://github.com/TheLastZombie/loaders/blob/master/Heritage%20Downloader.js)
 
 Downloads photos, snapshots, music tracks and soundscapes (if available) for every heritage from the [α CLOCK](https://www.sony.net/united/clock/) project.
