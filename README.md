@@ -21,3 +21,7 @@ Automatically downloads soundtrack albums from [KHInsider](https://downloads.khi
 ## [Wallpaper Downloader](https://thelastzombie.github.io/loaders/Wallpaper%20Downloader.html)
 
 WIP downloader for various Android wallpaper applications that runs in your browser, currently supporting Backdrops, Behang and Wallpaperboard.
+
+## [yiff.party Downloader](https://github.com/TheLastZombie/loaders/blob/master/yiff.party%20Downloader.js)
+
+Downloads the creators JSON/database as well as the artist-specific JSON file for all of them from [yiff.party](https://yiff.party/).
