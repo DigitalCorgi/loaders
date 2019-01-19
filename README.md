@@ -6,6 +6,10 @@ Automatic downloaders for various webpages and applications.
 
 Downloads all scenes including photo, video and audio assets from [Calm](https://www.calm.com/meditate).
 
+## [Emoji Downloader](https://github.com/TheLastZombie/loaders/blob/master/Emoji%20Downloader.js)
+
+Downloads all available Discord emotes from [Discord Emoji](https://discordemoji.com/).
+
 ## [Heritage Downloader](https://github.com/TheLastZombie/loaders/blob/master/Heritage%20Downloader.js)
 
 Downloads photos, snapshots, music tracks and soundscapes (if available) for every heritage from the [α CLOCK](https://www.sony.net/united/clock/) project.
