@@ -2,6 +2,10 @@
 
 Automatic downloaders for various webpages and applications.
 
+## [Archillect Downloader](https://github.com/TheLastZombie/loaders/blob/master/Archillect%20Downloader.js)
+
+Downloads all images collected by [Archillect](http://archillect.com/), the synthetic intelligence.
+
 ## [Calm Downloader](https://github.com/TheLastZombie/loaders/blob/master/Calm%20Downloader.js)
 
 Downloads all scenes including photo, video and audio assets from [Calm](https://www.calm.com/meditate).
