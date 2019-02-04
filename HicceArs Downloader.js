@@ -1,4 +1,3 @@
-console.log("HicceArs Downloader v1.0");
 const fs = require("fs");
 const chalk = require("chalk");
 const request = require("sync-request");
@@ -7,6 +6,14 @@ const exec = require("child_process").execFileSync;
 const readlineSync = require("readline-sync");
 const { CookieMap } = require("cookiefile");
 var session;
+console.log(chalk.blue("HicceArs Downloader v1.1"));
+if (fs.existsSync("HicceArs Downloader")) {
+	console.log("HicceArs directory already exists! Aborting...");
+	return;
+} else {
+	fs.mkdirSync("HicceArs Downloader");
+	process.chdir("HicceArs Downloader");
+};
 if (fs.existsSync("cookies.txt")) {
 	if (new CookieMap("cookies.txt").get("hicceArs_session")) {
 		console.log("Reading session cookie from found " + chalk.blue("cookies.txt") + ".");
@@ -21,21 +28,18 @@ if (fs.existsSync("cookies.txt")) {
 	console.log("You can also put a " + chalk.blue("cookies.txt") + " in the same directory as this script.");
 	session = readlineSync.question("hicceArs_session: ");
 };
-if (process.argv.length < 3) {
-	console.log("No ID found! Please specify at least one artist.");
-	return;
+if (session.match(/[0-9a-z]{64}/) == null) {
+	console.log("Warning: Session cookie seems to be invalid and does not match the expected value.");
+	console.log("If you are having issues downloading, please make sure you entered it correctly.");
 };
-if (fs.existsSync("HicceArs Downloader")) {
-	console.log("HicceArs directory already exists! Aborting...");
-	return;
-} else {
-	fs.mkdirSync("HicceArs Downloader");
-	process.chdir("HicceArs Downloader");
-};
-for (i = 0; i < process.argv.length - 2; i++) {
-	console.log("Processing profile " + chalk.blue(i + 1) + " of " + chalk.blue(process.argv.length - 2) + " (ID: " + chalk.blue(process.argv.slice(2)[i]) + ")...");
+download();
+function download() {
+	console.log("Please enter the " + chalk.blue("APID") + " of an artist to download.");
+	console.log("You can find it by looking at the URL of their profile page.");
+	console.log("To exit, press Ctrl+C or just close this window.");
+	apid = readlineSync.question("https://hiccears.com/artist-profile.php?apid=");
 	console.log("Getting details and pages...");
-	var res = request("GET", "https://hiccears.com/artist-content.php?aid=" + process.argv.slice(2)[i], {
+	var res = request("GET", "https://hiccears.com/artist-content.php?aid=" + apid, {
 		headers: {
 			"Cookie": "hicceArs_session=" + session + ";"
 		}
@@ -57,7 +61,7 @@ for (i = 0; i < process.argv.length - 2; i++) {
 		process.stdout.clearLine();
 		process.stdout.cursorTo(0);
 		process.stdout.write("Processing page " + chalk.blue(j + 1) + " of " + chalk.blue(pages) + "...");
-		var res = request("GET", "https://hiccears.com/artist-content.php?page=" + (j + 1) + "&aid=" + process.argv.slice(2)[i], {
+		var res = request("GET", "https://hiccears.com/artist-content.php?page=" + (j + 1) + "&aid=" + apid, {
 			headers: {
 				"Cookie": "hicceArs_session=" + session + ";"
 			}
@@ -85,8 +89,8 @@ for (i = 0; i < process.argv.length - 2; i++) {
 	};
 	console.log("Found " + chalk.blue(galleries.length + " objects") + " (" + chalk.green(typestatsg + " galleries") + ", " + chalk.green(typestatsp + " pictures") + ", " + chalk.red(typestatsn + " novels") + ", " + chalk.red(typestatsu + " unknown") + ").");
 	console.log("Note: Novels aren't supported yet and unknown pages won't work either.");
-	fs.mkdirSync(artist + " (" + process.argv.slice(2)[i] + ")");
-	process.chdir(artist + " (" + process.argv.slice(2)[i] + ")");
+	fs.mkdirSync(artist + " (" + apid + ")");
+	process.chdir(artist + " (" + apid + ")");
 	for (j = 0; j < galleries.length; j++) {
 		process.stdout.clearLine();
 		process.stdout.cursorTo(0);
@@ -99,27 +103,34 @@ for (i = 0; i < process.argv.length - 2; i++) {
 		var $ = cheerio.load(res.getBody());
 		fs.mkdirSync($(".panel-heading div:first-of-type a").text() + " (" + galleries[j].match(/\d+/) + ")");
 		process.chdir($(".panel-heading div:first-of-type a").text() + " (" + galleries[j].match(/\d+/) + ")");
-		switch (galleries[j].substr(2, galleries[j].substr(2).indexOf("."))) {
-			case "gallery":
-				$(".panel-body .row a").each(function (index) {
-					if ($(this).attr("href") == "#") {
-						return;
-					};
-					var res = request("GET", "https://hiccears.com" + $(this).attr("href").substr(1), {
-						headers: {
-							"Cookie": "hicceArs_session=" + session + ";"
-						}
+		try {
+			switch (galleries[j].substr(2, galleries[j].substr(2).indexOf("."))) {
+				case "gallery":
+					$(".panel-body .row a").each(function (index) {
+						if ($(this).attr("href") == "#") {
+							return;
+						};
+						var res = request("GET", "https://hiccears.com" + $(this).attr("href").substr(1), {
+							headers: {
+								"Cookie": "hicceArs_session=" + session + ";"
+							}
+						});
+						var $2 = cheerio.load(res.getBody());
+						exec("wget", ["-q", "https://hiccears.com" + $2(".panel-body .row:nth-child(2) a").attr("href").substr(1)]);
 					});
-					var $2 = cheerio.load(res.getBody());
-					exec("wget", ["-q", "https://hiccears.com" + $2(".panel-body .row:nth-child(2) a").attr("href").substr(1)]);
-				});
-				break;
-			case "picture":
-				exec("wget", ["-q", "https://hiccears.com" + $(".panel-body .row a").attr("href").substr(1)]);
-				break;
+					break;
+				case "picture":
+					exec("wget", ["-q", "https://hiccears.com" + $(".panel-body .row a").attr("href").substr(1)]);
+					break;
+			};
+		} catch(e) {
+			console.log("\nError downloading file! This usually happens when the filename is too long.");
+			console.log("Try going up a few directories, e.g. running it from the root of an external drive.");
+			console.log(e.toString());
 		};
 		process.chdir("..");
 	};
 	process.stdout.write("\n");
-	console.log("Finished downloading " + chalk.blue(artist) + " (ID: " + chalk.blue(process.argv.slice(2)[i]) + ").");
+	console.log("Finished downloading " + chalk.blue(artist) + " (ID: " + chalk.blue(apid) + ").");
+	download();
 };
