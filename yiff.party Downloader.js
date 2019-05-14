@@ -1,5 +1,5 @@
 // Show header
-console.log("yiff.party Downloader v1.0");
+console.log("yiff.party Downloader v1.1");
 console.log("");
 
 // Import dependencies
@@ -21,8 +21,8 @@ if (fs.existsSync("yiff.party Downloader")) {
 // Get creator database
 console.log("Retrieving creator database...");
 console.log("");
-request("https://yiff.party/creators2.json", function (error, response, body) {
-	fs.writeFileSync("creators2.json", body);
+request("https://yiff.party/json/creators.json", function (error, response, body) {
+	fs.writeFileSync("creators.json", body);
 
 	// Do for each creator
 	for (i = 0; i < JSON.parse(body).creators.length; i++) {
