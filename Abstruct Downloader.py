@@ -22,7 +22,7 @@ for b in a:
 		print str(len(e)) + " images found."
 		for f in xrange(len(e)):
 			print "Downloading " + e[f]["name"] + "..."
-			urllib.urlretrieve(e[f]["url_res5"], e[f]["name"] + os.path.splitext(urlparse.urlparse(e[f]["url_res5"]).path)[1])
+			urllib.urlretrieve(e[f]["url_res5"] or e[f]["url_res4"] or e[f]["url_res3"] or e[f]["url_res2"] or e[f]["url_res1"], e[f]["name"] + os.path.splitext(urlparse.urlparse(e[f]["url_res5"] or e[f]["url_res4"] or e[f]["url_res3"] or e[f]["url_res2"] or e[f]["url_res1"]).path)[1])
 	print "Leaving directory..."
 	os.chdir("..")
 print "Finished downloading."
