@@ -2,6 +2,10 @@
 
 Automatic downloaders for various webpages and applications.
 
+## [Abstruct Downloader](https://github.com/TheLastZombie/loaders/blob/master/Abstruct%20Downloader.py)
+
+Downloads all wallpapers from the [Abstruct](http://abstruct.co) collection by Hampus Olsson.
+
 ## [Archillect Downloader](https://github.com/TheLastZombie/loaders/blob/master/Archillect%20Downloader.js)
 
 Downloads all images collected by [Archillect](http://archillect.com/), the synthetic intelligence.
