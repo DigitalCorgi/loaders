@@ -44,6 +44,10 @@
 			.status.wallpaperboard .progress {
 				background-color: #20ac6b;
 			}
+			.configuration.abstruct,
+			.status.abstruct .progress {
+				background-color: #4016da;
+			}
 			.configuration input {
 				text-align: center;
 				flex: 1;
@@ -183,7 +187,8 @@
 		            Workaround for FileSaver.js and its apparent 500 MB limit
 		            Workaround when a file with the same wallname already exists
 		            Workaround when a file has no extension (uses last period)
-		            Add Facets module with DB file parsing and downloading -->
+		            Add Facets module with DB file parsing and downloading
+		            Add Abstruct module -->
 	</head>
 	<body>
 		<div class="selection">
@@ -191,6 +196,7 @@
 			<img data-id="behang" src="https://lh3.ggpht.com/aQjn3W92NRQ-y2TWdRSwutZBsoAUkHER-VOYR6oqz3-0l3naYEPozUXT5LPhm88YXA">
 			<img data-id="facets" src="https://lh3.ggpht.com/bzKzJ4exJALYw6meR90ksKNGwx90Akn6JRbbch-_dozMll5Z0QD0W_N1F-gpuoT2QM4">
 			<img data-id="wallpaperboard" src="https://raw.githubusercontent.com/danimahardhika/wallpaperboard/master/arts/icon.png">
+			<img data-id="abstruct" src="https://lh3.googleusercontent.com/b1dyaiByBzY_YIMmkE6Tx3JopvQWWwm8uXqOHex4DnABE8AwSOTc8P76ANq9__U5PD4">
 		</div>
 		<div class="configuration backdrops">
 			<input name="endpoint" spellcheck="false" value="https://backdrops.io/walls/api_v3.2.php?task=all_walls">
@@ -203,6 +209,9 @@
 		</div>
 		<div class="configuration wallpaperboard">
 			<input name="endpoint" spellcheck="false" value="https://raw.githubusercontent.com/danimahardhika/wallpaperboard/master/json%20example/wallpaper_sample.json">
+		</div>
+		<div class="configuration abstruct">
+			<input name="endpoint" spellcheck="false" value="">
 		</div>
 		<div class="status backdrops">
 			<div class="progress back">
@@ -223,6 +232,12 @@
 			</div>
 		</div>
 		<div class="status wallpaperboard">
+			<div class="progress back">
+			</div>
+			<div class="progress front">
+			</div>
+		</div>
+		<div class="status abstruct">
 			<div class="progress back">
 			</div>
 			<div class="progress front">
