@@ -14,21 +14,25 @@ Downloads all images collected by [Archillect](http://archillect.com/), the synt
 
 Downloads all scenes including photo, video and audio assets from [Calm](https://www.calm.com/meditate).
 
+## [Deezer Downloader](https://gist.github.com/TheLastZombie/107de3d9db37c54f8aacc73fc54c6812)
+
+Downloads a specified [Deezer](https://www.deezer.com/de/) track in the highest available format and bitrate.
+
 ## [Emoji Downloader](https://github.com/TheLastZombie/loaders/blob/master/Emoji%20Downloader.js)
 
 Downloads all available Discord emotes from [Discord Emoji](https://discordemoji.com/).
 
 ## [Heritage Downloader](https://github.com/TheLastZombie/loaders/blob/master/Heritage%20Downloader.js)
 
-Downloads photos, snapshots, music tracks and soundscapes (if available) for every heritage from the [α CLOCK](https://www.sony.net/united/clock/) project.
+Downloads photos, snapshots, music tracks and soundscapes for every heritage from the [α CLOCK](https://www.sony.net/united/clock/) project.
 
-## [HicceArs Downloader](https://github.com/TheLastZombie/loaders/blob/master/HicceArs%20Downloader.js)
+## HicceArs Downloader
 
-Needs user IDs as command line arguments. Downloads galleries and images from the specified [HicceArs](https://hiccears.com/) artists.
+Downloads galleries and images from the specified [HicceArs](https://hiccears.com/) artists.
 
 ## [KHInsider Downloader](https://github.com/TheLastZombie/VGMLoader)
 
-Automatically downloads soundtrack albums from [KHInsider](https://downloads.khinsider.com/), because that feature is currently behind a paywall.
+Automatically downloads soundtrack albums from [KHInsider](https://downloads.khinsider.com/).
 
 ## [Nico Nico Downloader](https://github.com/TheLastZombie/loaders/blob/master/Nico%20Nico%20Downloader.js)
 
@@ -36,8 +40,8 @@ Downloads all medleys / files from the [Nico Nico Douga Medley Database](http://
 
 ## [Wallpaper Downloader](https://thelastzombie.github.io/loaders/Wallpaper%20Downloader.html)
 
-WIP downloader for various Android wallpaper applications that runs in your browser, currently supporting Backdrops, Behang and Wallpaperboard.
+WIP downloader for various Android wallpaper applications that runs in your browser.
 
 ## [yiff.party Downloader](https://github.com/TheLastZombie/loaders/blob/master/yiff.party%20Downloader.js)
 
-Downloads the creators JSON/database as well as the artist-specific JSON file for all of them from [yiff.party](https://yiff.party/).
+Downloads the creators and all artist-specific JSON files from [yiff.party](https://yiff.party/).
